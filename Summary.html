@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Summary</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f2a46aea-b998-4efa-ad3f-5cc330b77cb1" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1483794344563-d27a8d18014e?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 57.21000000000001%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/clover_red.svg"/></div><h1 class="page-title">Summary</h1><p class="page-description"></p></header><div class="page-body"><h1 id="20c02b9a-2ca9-4146-817e-1ddc5be5f9f4" class="">Computer Science ————————————————</h1><div id="ca1e3e09-2a69-4249-973f-e2701abc5294" class="column-list"><div id="df0b5fbd-4a8c-4285-800c-aef0d2a9289f" style="width:25%" class="column"><blockquote id="d789fd6c-5e40-46ff-a61d-640a4c93ded2" class="block-color-red">OOP</blockquote><ul id="bf8d7450-d9b7-4063-bafe-f5d5dd09d1d6" class="bulleted-list"><li style="list-style-type:disc">Objects</li></ul><ul id="f013fdee-1301-44fc-b0ae-dad2f8dc7a7f" class="bulleted-list"><li style="list-style-type:disc">Classes </li></ul><ul id="441a4894-85fe-4dc0-8fe3-62be72c03fe3" class="bulleted-list"><li style="list-style-type:disc">Encapsulation</li></ul><ul id="8633cb82-9d8f-4842-9ca3-de39b1f7d6c0" class="bulleted-list"><li style="list-style-type:disc">Inheritance</li></ul><ul id="0db5b30d-7746-4213-859e-0eccfffa2008" class="bulleted-list"><li style="list-style-type:disc">Polymorphism</li></ul><ul id="8a1e679a-5a37-45e1-b044-a88f63013540" class="bulleted-list"><li style="list-style-type:disc">Abstraction</li></ul><p id="9c4df022-3fd0-4d33-8329-793cfdade374" class="">
+</p></div><div id="c3c39887-22ad-4d44-9a7b-cf41fc27ea5f" style="width:75%" class="column"><blockquote id="6d872797-e0cc-40a7-bca7-b01e8492968f" class="block-color-red"><mark class="highlight-red">Software development methodologies </mark></blockquote><ul id="0990e510-85f9-4756-b97b-6983be08c670" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow">Waterfall</mark></strong>: Sequential approach with distinct phases (requirements, design, development, testing, deployment) and minimal flexibility for changes.</li></ul><ul id="b46336ec-fe81-46e8-a790-afc4cc81ae2a" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow">Agile</mark></strong>: Iterative and incremental development with frequent feedback and adaptability to changing requirements.</li></ul><ul id="d83b0e5a-af34-4967-8d9d-cd49c4594685" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow">Scrum</mark></strong>: A specific Agile framework with short development cycles called sprints, daily stand-up meetings, and product backlog management.</li></ul><p id="876d1977-76b5-4b2f-a255-ccea5381f68e" class="">
+</p></div></div><p id="49c97a4a-2113-4e82-ad6a-07379d5ac5ac" class="">Design Patterns !</p><hr id="1d3fd92b-7cbc-48b8-a059-82a0ceb672d6"/><h1 id="c7bf89b8-dd45-4d45-85a8-1f4aced270c3" class="">Coding ——————————————————————</h1><div id="851fefc5-52b3-4812-bd10-7a3216cda4f6" class="column-list"><div id="5e5cedc5-0ed3-45bf-a11f-49561db7b8bf" style="width:31.25%" class="column"><blockquote id="e2810a0a-a3d4-4344-bcde-a1c943d6c713" class="block-color-red"><strong>Vocabulary </strong></blockquote><hr id="1b90de01-c680-4f2f-85f7-9a3cd7b86247"/><ul id="2b0df481-2807-44e2-8468-b5857e2adac1" class="bulleted-list"><li style="list-style-type:disc">Syntax</li></ul><ul id="2010062e-83e8-4c2a-a5d4-2a53301a417e" class="bulleted-list"><li style="list-style-type:disc">JVM</li></ul><ul id="2e5d919a-7d15-45c6-817c-881661eec907" class="bulleted-list"><li style="list-style-type:disc">Multithreading</li></ul><p id="4d7acfd2-45e0-4bb2-a988-bd4020a560b2" class="">
+</p><blockquote id="b578a8c1-1fa0-46d2-a776-edc5a5904701" class="block-color-red"><strong>Data Types</strong></blockquote><ul id="ee108dd6-b748-4e94-8f9a-458944af81a0" class="bulleted-list"><li style="list-style-type:disc">int</li></ul><ul id="59baa663-81a2-4d62-8826-b757777e62cc" class="bulleted-list"><li style="list-style-type:disc">double</li></ul><ul id="e6d63185-7031-4c2c-af98-a0ee0657f869" class="bulleted-list"><li style="list-style-type:disc">boolean</li></ul><ul id="3576af1f-d2a7-4157-b1e7-355c10fbc8a6" class="bulleted-list"><li style="list-style-type:disc">char</li></ul><ul id="68ff2264-5d7d-4003-ae7f-b4c30eae3f75" class="bulleted-list"><li style="list-style-type:disc">String</li></ul><p id="3f9e747d-b054-4b08-995f-19975cbf9dbe" class="">
+</p></div><div id="e56b9c09-2ae1-4860-a6a6-a415bab29bd4" style="width:68.75%" class="column"><blockquote id="00a687e6-b5ce-4c3a-b203-dc0f37262035" class="block-color-red"><mark class="highlight-red"><strong>Programming Languages</strong></mark><mark class="highlight-red"> </mark></blockquote><p id="046222d8-e4a6-4be4-8cbc-703a61b0de85" class="">
+</p><ul id="60ca9802-1267-40c6-bab6-57665defbb46" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Python</strong></mark>: Web development, data analysis, artificial intelligence, automation, scripting.</li></ul><ul id="7a332ec5-9ad6-439b-80d9-3e00689a1ae9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>JavaScript</strong></mark>: Web development, interactive website content.</li></ul><ul id="ffb5b386-9c78-4c3b-8958-4a12ab8d0615" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Java</strong></mark>: Enterprise applications, Android app development, large-scale systems</li></ul><ul id="00f7bfce-352c-4bd8-9bb8-cb2a199219fc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>C#</strong></mark>: Windows application development, game development (Unity), .NET framework.</li></ul><ul id="c11c6cfb-6207-4d65-8c9a-18bbf557c5db" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>C++</strong></mark>: System programming, game development, resource-intensive applications.</li></ul><ul id="50d2fa36-e788-43a3-923a-7742ce56b1d5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>R</strong></mark>: Statistical computing, data analysis, machine learning.</li></ul><ul id="d08c77a2-7c5d-4752-b658-f24fcc2f578a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>TypeScript</strong></mark>: Web development, building large-scale applications with enhanced type safety.</li></ul><ul id="a06bec6d-7032-4cd6-8b2c-42b80222092d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>MATLAB</strong></mark>: Numerical computing, data analysis, simulation.</li></ul><ul id="7ff9e616-1790-48c1-9714-20adaea26520" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Shell : </strong></mark>scripting: Automating tasks, system administration.</li></ul><p id="630ad7e3-095c-4ca7-a106-cc65f3e9f1ad" class="">
+</p></div></div><div id="e39f4c68-f484-4a21-b11b-0cf8640e9abd" class="column-list"><div id="294eab4e-8720-4817-9c21-202f59822432" style="width:75%" class="column"><figure class="block-color-yellow callout" style="white-space:pre-wrap;display:flex" id="096a8e36-2ec8-48b5-8d3f-04e31ad3b31a"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/chart-mixed_red.svg"/></div><div style="width:100%"><mark class="highlight-red"><em><strong>Data Structure</strong></em></mark><div id="0aa4dc21-7305-46e9-9359-f13eb7c332a6" class="column-list"><div id="01a33cbc-029f-4c80-90da-2c502a086cdc" style="width:100%" class="column"><ul id="b9866d8d-c548-45e0-a279-3d88e1535868" class="bulleted-list"><li style="list-style-type:disc">Arrays</li></ul><ul id="0063ed90-5bac-42c4-ae85-4de2cd880f2d" class="bulleted-list"><li style="list-style-type:disc">LinkedList</li></ul><ul id="cb22fca6-8831-411e-be5d-5526e20ff2e4" class="bulleted-list"><li style="list-style-type:disc">Stack</li></ul><ul id="38a28999-3a8d-4ba0-a9d3-a2241cbdeb9d" class="bulleted-list"><li style="list-style-type:disc">ArrayList</li></ul><ul id="e1869db2-cd3d-4f9d-89ef-6e99af8acef8" class="bulleted-list"><li style="list-style-type:disc">List</li></ul></div><div id="dac1756d-d79d-42cf-a09a-8c99472f6fcd" style="width:100%" class="column"><ul id="88a800bb-d8af-405b-8282-e290c085df87" class="bulleted-list"><li style="list-style-type:disc">Queue</li></ul><ul id="5a159837-fcd2-4b8b-ac12-be836d4a1d20" class="bulleted-list"><li style="list-style-type:disc">HashMap</li></ul><ul id="6617d19f-eaeb-4cac-9a21-952daf703f87" class="bulleted-list"><li style="list-style-type:disc">Tuple</li></ul><ul id="afc4e423-a527-47c2-8823-87d75df77c56" class="bulleted-list"><li style="list-style-type:disc">Set</li></ul><ul id="2d51067e-7356-4493-829d-439b843df4d1" class="bulleted-list"><li style="list-style-type:disc">Dictionary</li></ul></div></div></div></figure></div><div id="74d6dc4e-e029-400f-b6d2-ab64860a4160" style="width:25%" class="column"><blockquote id="716f67e3-90ee-4956-9b6d-6ea1d278698f" class="block-color-red"><mark class="highlight-red">Control Flow</mark></blockquote><ul id="4f5725dc-f965-4133-a054-49cf8c74edac" class="bulleted-list"><li style="list-style-type:disc">if-else</li></ul><ul id="f530601b-807e-424a-888d-731d0ebaf793" class="bulleted-list"><li style="list-style-type:disc">for loop</li></ul><ul id="a7daed10-467e-4658-8c5d-2f6b8113d245" class="bulleted-list"><li style="list-style-type:disc">for each</li></ul><ul id="b8668733-246a-464d-800e-98ed06a2e088" class="bulleted-list"><li style="list-style-type:disc">While loop</li></ul><ul id="3e255c72-6f78-4513-9723-e828973344bd" class="bulleted-list"><li style="list-style-type:disc">switch</li></ul><p id="c84ec095-098e-4438-9012-c61c551d40cd" class="">
+</p></div></div><hr id="890901a8-b94f-4ec1-a7e4-065936521c09"/><h1 id="06830300-fbe3-469f-976d-c432342f68fe" class="">Databases and SQL ————————————————</h1><div id="dfbe3e15-18dd-4b8d-8347-3124c89ebdd2" class="column-list"><div id="493c2b22-add8-489a-8b34-ac3fa7828f40" style="width:50%" class="column"><blockquote id="5e6fd656-aff0-4c30-85bc-2085828bde12" class="block-color-red">Database Types</blockquote><ul id="cdba49cc-3fe5-4a83-88a7-3733b502fa7c" class="bulleted-list"><li style="list-style-type:disc">Relational Databases (e.g., MySQL, PostgreSQL, Oracle)</li></ul><ul id="bb26c38d-1a7c-441a-b289-198704ee13fd" class="bulleted-list"><li style="list-style-type:disc">NoSQL Databases (e.g., MongoDB, Couchbase, Redis)</li></ul><p id="67397d63-ac13-4cae-9c88-fec2ef62eb52" class="">
+</p></div><div id="50a967a1-3e85-4063-a698-c470c2399930" style="width:50%" class="column"><blockquote id="5aa7134b-8ba5-42fa-a201-a11e5fd4738e" class="block-color-red">Database Normalization:</blockquote><ul id="7e1748ad-f7f6-4cc0-9e38-5ae7305ffdc8" class="bulleted-list"><li style="list-style-type:disc">First Normal Form (1NF): Eliminating duplicate data by atomic values.</li></ul><ul id="d4919f88-a659-495f-bc5b-7ed59d1a4179" class="bulleted-list"><li style="list-style-type:disc">Second Normal Form (2NF): Ensuring non-key attributes depend on the entire primary key.</li></ul><ul id="d50452f7-b69d-4a34-bc1a-2828c546889a" class="bulleted-list"><li style="list-style-type:disc">Third Normal Form (3NF): Removing transitive dependencies between non-key attributes.</li></ul></div></div><hr id="bc5fffc8-21e1-4b88-a5eb-d0da3756d656"/><div id="bfe356ba-7a03-4dda-8f9d-fc260079a34e" class="column-list"><div id="b8d373c6-c182-483a-9ac3-e59cb4346a20" style="width:33.33333333333333%" class="column"><blockquote id="911c3f40-2388-4388-84ff-cd409d8257f7" class="block-color-red">SQL Statements:</blockquote><ul id="f5eafbbb-1b3f-4698-818a-c738b906505d" class="bulleted-list"><li style="list-style-type:disc">SELECT</li></ul><ul id="651ab824-0838-4813-ae9c-f748bd80c9e6" class="bulleted-list"><li style="list-style-type:disc">INSERT INTO</li></ul><ul id="f4481f90-07e3-4b95-a974-3f8a1285582b" class="bulleted-list"><li style="list-style-type:disc">UPDATE</li></ul><ul id="a4c2721f-08cd-4c8b-9cd8-c73a6881f013" class="bulleted-list"><li style="list-style-type:disc">DELETE FROM</li></ul><ul id="d90239de-5009-4a2c-b131-0c53866f7407" class="bulleted-list"><li style="list-style-type:disc">CREATE TABLE</li></ul><ul id="06c178d6-5ee7-4608-8bbb-7cc10d4f5e7b" class="bulleted-list"><li style="list-style-type:disc">ALTER TABLE</li></ul><ul id="80fc9f5c-95a3-474a-a1f5-e5e5caf0705d" class="bulleted-list"><li style="list-style-type:disc">DROP TABLE</li></ul><p id="ec04a558-c22f-4796-a98c-3dd8f73322df" class="">
+</p></div><div id="6ed45c91-a94f-47c3-bbe6-9f7ca2e104d7" style="width:33.33333333333333%" class="column"><blockquote id="c480e555-0ddb-4d3b-b9c6-ff210c4ca511" class="block-color-red">SQL Clauses:</blockquote><ul id="ac9b616c-fd71-4e1e-9211-cc19181c9833" class="bulleted-list"><li style="list-style-type:disc">WHERE</li></ul><ul id="b5f0f107-7e9a-4228-a428-f4c678e6d9b3" class="bulleted-list"><li style="list-style-type:disc">ORDER BY</li></ul><ul id="aab7815b-8a15-41cb-818f-785d89f88c8b" class="bulleted-list"><li style="list-style-type:disc">GROUP BY</li></ul><ul id="d6a5cc73-86ab-4a6c-a8e2-fdc967cf4c19" class="bulleted-list"><li style="list-style-type:disc">HAVING</li></ul><ul id="3945bb2e-0882-46df-8967-54d4fce7d9fa" class="bulleted-list"><li style="list-style-type:disc">JOIN</li></ul><ul id="7a2afe2f-b276-4986-95e1-bb6f3ed4ad52" class="bulleted-list"><li style="list-style-type:disc">DISTINCT</li></ul><ul id="01ecae59-c7f4-4598-a0da-206d0f76299d" class="bulleted-list"><li style="list-style-type:disc">LIMIT</li></ul><ul id="de065aa0-9f55-42b8-9853-4ecf4d8474fd" class="bulleted-list"><li style="list-style-type:disc">OFFSET</li></ul></div><div id="7202c126-38f8-4f6c-ae3a-e350e36e4e7f" style="width:33.33333333333333%" class="column"><blockquote id="cd7ec7de-3594-4c84-818f-5b4233dbff8a" class="block-color-red">SQL Functions:</blockquote><ul id="b2d77d6b-bdb7-4f5b-a138-3499bd96eb91" class="bulleted-list"><li style="list-style-type:disc">COUNT</li></ul><ul id="2686c29d-33ad-4484-9c3f-88b1c30fc2f4" class="bulleted-list"><li style="list-style-type:disc">SUM</li></ul><ul id="a9eddb38-ab2f-4ee0-b603-cbf1dd62639a" class="bulleted-list"><li style="list-style-type:disc">AVG</li></ul><ul id="250d17f2-56ea-40cb-8390-990e7224a661" class="bulleted-list"><li style="list-style-type:disc">MAX</li></ul><ul id="0ab5b46e-877f-4676-8ce7-24f20378aa22" class="bulleted-list"><li style="list-style-type:disc">UPPER</li></ul><ul id="fdf24a0a-77fb-40a4-9a74-0dfeace82051" class="bulleted-list"><li style="list-style-type:disc">LOWER</li></ul><ul id="ba275ac2-e548-446f-b798-cf40e79463d7" class="bulleted-list"><li style="list-style-type:disc">CONCA</li></ul><ul id="a361ee14-e00a-441c-ac4f-9253ed07100c" class="bulleted-list"><li style="list-style-type:disc">DATE</li></ul></div></div><hr id="0223955a-7c57-4050-bac5-1659e886bc2f"/><div id="fcb51f87-de7a-427d-94cb-ea02bea5f860" class="column-list"><div id="b4bc22de-92a2-461f-9207-f27ce85efd73" style="width:75%" class="column"><blockquote id="68e93007-fe63-4544-9b27-6c05821da4eb" class="block-color-red">SQL Joins:</blockquote><ul id="ef2f1d82-cbad-4eb1-945d-e9e7bf1fa53c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">INNER JOIN</mark>: Retrieves records that have matching values in both tables.</li></ul><ul id="cb81bb06-60b0-4bab-92cc-f5816ba9d1b3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">LEFT JOIN</mark>: Retrieves all records from the left table and matching records from the right table.</li></ul><ul id="f3358b6b-1778-4caf-a20e-a1a9bb44fff7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">RIGHT JOIN</mark>: Retrieves all records from the right table and matching records from the left table.</li></ul><ul id="e64c6788-97ec-43bc-8996-7a0151355772" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">FULL JOIN</mark>: Retrieves all records when there is a match in either the left or right table.</li></ul><ul id="5cd5b8dc-fe2a-4a4a-8e3d-39021e777d47" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">CROSS JOIN</mark>: Returns the Cartesian product of the two tables.</li></ul></div><div id="6a2e120e-00be-4d0b-ac95-105c7a753989" style="width:25%" class="column"><blockquote id="e34abc24-aa07-46d6-a535-dd9c7538b37d" class="block-color-red">SQL Constraints:</blockquote><ul id="844dcd5a-ac6c-4e78-a80e-636c26bf437a" class="bulleted-list"><li style="list-style-type:disc">PRIMARY KEY</li></ul><ul id="d3e867f8-80b8-4c8c-939e-e418fca8ffbd" class="bulleted-list"><li style="list-style-type:disc">FOREIGN KEY</li></ul><ul id="ddb643c3-6097-447a-939a-5429f6a4c239" class="bulleted-list"><li style="list-style-type:disc">UNIQUE</li></ul><ul id="68922c4f-d159-4fd5-b328-561cf97d60d4" class="bulleted-list"><li style="list-style-type:disc">NOT NULL</li></ul><ul id="995fff25-86d4-4835-9fea-fab59f32855e" class="bulleted-list"><li style="list-style-type:disc">CHECK</li></ul><p id="393c1894-c0c6-4908-aeae-59ac212de6ad" class="">
+</p></div></div><hr id="0e3600df-8fad-4340-882e-aa51051daec1"/><h1 id="887f8ba0-4013-40af-9328-6d1886d08ae9" class="">Web Development</h1><div id="2a4311f4-ea0f-42cd-a872-ea2163e54bda" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th></tr></thead><tbody><tr id="5179a934-3779-4b6f-aa68-cb779b58fcbb"><td class="cell-title"><a href="Summary%20f2a46aeab9984efaad3f5cc330b77cb1/Untitled%20Database%202a4311f4ea0f42cda872ea2163e54bda/HTML%205179a93437794b6faa68cb779b58fcbb.html">HTML</a></td><td class="cell-`N&gt;E"><time>@December 21, 2023 12:45 AM</time></td><td class="cell-Pc^N"></td></tr><tr id="e15974ae-0154-4b89-8357-94778fb76d03"><td class="cell-title"><a href="Summary%20f2a46aeab9984efaad3f5cc330b77cb1/Untitled%20Database%202a4311f4ea0f42cda872ea2163e54bda/CSS%20e15974ae01544b89835794778fb76d03.html">CSS</a></td><td class="cell-`N&gt;E"><time>@December 21, 2023 12:45 AM</time></td><td class="cell-Pc^N"></td></tr><tr id="2b543a0a-8e99-4c2e-9dba-89bde9d96b4a"><td class="cell-title"><a href="Summary%20f2a46aeab9984efaad3f5cc330b77cb1/Untitled%20Database%202a4311f4ea0f42cda872ea2163e54bda/Java%20Script%202b543a0a8e994c2e9dba89bde9d96b4a.html">Java Script</a></td><td class="cell-`N&gt;E"><time>@December 21, 2023 12:45 AM</time></td><td class="cell-Pc^N"></td></tr><tr id="c1e9a657-2f48-4daa-96fa-7901910f4260"><td class="cell-title"><a href="Summary%20f2a46aeab9984efaad3f5cc330b77cb1/Untitled%20Database%202a4311f4ea0f42cda872ea2163e54bda/DJango%20c1e9a6572f484daa96fa7901910f4260.html">DJango</a></td><td class="cell-`N&gt;E"><time>@December 21, 2023 12:56 AM</time></td><td class="cell-Pc^N"></td></tr><tr id="10f39be8-80fd-47c3-892e-aa3977a42a94"><td class="cell-title"><a href="Summary%20f2a46aeab9984efaad3f5cc330b77cb1/Untitled%20Database%202a4311f4ea0f42cda872ea2163e54bda/Git%2010f39be880fd47c3892eaa3977a42a94.html">Git</a></td><td class="cell-`N&gt;E"><time>@December 21, 2023 12:57 AM</time></td><td class="cell-Pc^N"></td></tr><tr id="99865d0b-74ea-4b7f-ba5b-723cbd852f21"><td class="cell-title"><a href="Summary%20f2a46aeab9984efaad3f5cc330b77cb1/Untitled%20Database%202a4311f4ea0f42cda872ea2163e54bda/UI%20UX%2099865d0b74ea4b7fba5b723cbd852f21.html">UI\UX</a></td><td class="cell-`N&gt;E"><time>@December 21, 2023 12:59 AM</time></td><td class="cell-Pc^N"></td></tr></tbody></table><br/><br/></div><h3 id="06865d81-7364-4615-9123-9d7f8574d36c" class="">Definition and Principles</h3><ul id="b94f8c8c-cc98-40f4-8b5e-a86f9eb9d939" class="bulleted-list"><li style="list-style-type:disc">DevOps: A software development approach that combines development (Dev) and operations (Ops) to improve collaboration, efficiency, and quality throughout the software development lifecycle.</li></ul><h1 id="7d9c1d6f-40d1-4dd6-aa9c-e9917aacc9a7" class="">Data Science </h1></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

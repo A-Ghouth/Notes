@@ -1,0 +1,100 @@
+? Main :
+    <h1> 
+    <p>
+    <pre> 
+    <br> = go next line
+    <hr>
+    <a href="https://www.w3schools.com">
+    <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">  
+    <span>Hello World</span>
+    <dev>
+    <!-- great text --> 
+    <link rel="stylesheet" href="styles.css">
+    <content>
+    colo = hsl(color , saturation , lightness)
+    <nav>
+    <Section>
+
+? Postion : 
+    static  = order, standard  
+    relative = u can edit the postion in a flow
+    absloute = take parent postion as 0,0 --> use with relative
+    fixed    = become absloute sticky
+    sticky   = it is relative but become fixed whrn u move  
+
+? FlexBox 1D : 
+    display fix 
+    
+    main y-axis  = justify-content
+    cross x-axis = align-items 
+    control view = align-content
+
+? Grid 2D :
+    - repeate(auto fit , 1fr)
+
+    - template area - grid area 
+    - . empty
+
+    - justify content y-axis 
+    - align items x-axis
+
+    - grid-auto-flow = row , coloumn --> good with media
+
+? display : 
+    Block = all Line = ex.div
+    inline = take small need = ex.span != can not control height and width
+    inline-blockc = inline + editing the height and width  
+    none 
+
+    flex 
+    grid 
+
+? order : 
+    inline --> id --> class --> term 
+
+? Media : 
+    screens + print 
+    maxwidth
+    minwidth
+    grid - flow
+
+? BallPont : 
+    - img = cover
+    - rgba = use transparity 
+    - blend-mode = combnine two attrbiutes in a img 
+    - box sizing = boreder-box
+    - text-decoration 
+    - use auto and %
+    - how write = display - postion - <box-model>
+
+? Tweeks :
+        auto vs 100% : 100 = create actual 100px width
+
+        Units:
+            - rem = 10px --> 62.5% [html]
+            - Fonts = rem
+            - width = %, max, ch[charter size ]
+            - height = nessery! , min ,
+            - padding = em, rem , 
+            - margin = rem
+            - media = m
+
+        P:
+            - 75ch
+? Learn :
+        - @includee font
+
+? Tips -->
+    - Text p = max-width - [h1,h2,p, ...] - 60ch
+    - container = GAPS Breath
+    - text = line-heghit
+    - contrast in inspector = checking
+    - radius border = 100vmax
+    - color = current color
+
+    - Start 
+        - By black and white --> then take from the pic
+        - Adobe Color
+
+    - Design 
+        - designmodo

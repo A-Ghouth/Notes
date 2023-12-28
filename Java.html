@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Java</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5a39dc05-f48d-4044-8586-ff2fdff25a62" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1639431682289-72b9ebb75895?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/document_red.svg"/></div><h1 class="page-title">Java</h1><p class="page-description"></p></header><div class="page-body"><h2 id="d3afe063-1f07-4efe-833f-c803720e1cec" class="">Notes</h2><ul id="df3fae4c-43e2-4c22-8990-ad659dafc5f5" class="bulleted-list"><li style="list-style-type:disc"><code>nextLine</code> - Problem</li></ul><ul id="809341cc-b574-43b5-b653-8787fda82c9c" class="bulleted-list"><li style="list-style-type:disc">Look for better functions using <code>.functions</code>.</li></ul><ul id="406b94e8-5d13-4bf9-bb20-b089cf3d0ca0" class="bulleted-list"><li style="list-style-type:disc">Explore data structures.</li></ul><ul id="161debd5-8d8a-4e09-ba15-36497edb46d0" class="bulleted-list"><li style="list-style-type:disc">Use <code>HashMap</code>.</li></ul><ul id="e1203c74-d5fa-415e-b02e-b7a735e232d6" class="bulleted-list"><li style="list-style-type:disc">Changing the order of <code>or</code> and <code>,</code> has an effect.</li></ul><h2 id="7ef3a443-79f9-461e-a095-521537d7eef1" class=""><strong>Identifier</strong></h2><ul id="f8c5ba67-1274-4e7e-9840-3dd9d9b15631" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>assert</code></span><div class="indented"></div></li></ul><ul id="2892dae6-9ee1-4b24-8fbc-d8bf3518e46f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>break</code></span><div class="indented"></div></li></ul><ul id="d92650a2-5e50-4114-a3cd-b1fbbf23238e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>byte</code></span><div class="indented"></div></li></ul><ul id="cbdd60b2-bd39-4c06-abf5-fc89588be6af" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>case</code></span><div class="indented"></div></li></ul><ul id="6f9c1964-f31e-438c-b420-bf3dade6f4c5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>catch</code></span><div class="indented"></div></li></ul><ul id="ba8d9539-e5a5-4781-b294-544aa3965f62" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>const</code></span><div class="indented"></div></li></ul><ul id="affe2a15-180e-4bbd-b9f1-c2ff2dcf8f2e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>goto</code></span><div class="indented"></div></li></ul><ul id="08189dee-ed44-4c8d-81de-a1f77dd146b1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>implements</code></span><div class="indented"></div></li></ul><ul id="ea1a285a-66ae-46fd-ab7f-65c48764586b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>instanceof</code></span><div class="indented"></div></li></ul><ul id="93a1fb7b-724b-453b-b0f7-6ff7b78301fb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>long</code></span><div class="indented"></div></li></ul><ul id="dbe9c609-2849-49a8-bba1-a81f1480737d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>native</code></span><div class="indented"></div></li></ul><ul id="d52deba9-44f6-481a-b351-3b8a2ce99a3d" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>protected</code></span><div class="indented"></div></li></ul><ul id="d3680e78-6770-41cb-99dc-a323fe171ee6" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>return</code></span><div class="indented"></div></li></ul><ul id="3b2fcae2-d28f-4abd-ac37-4792cef97866" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>short</code></span><div class="indented"></div></li></ul><ul id="4593463c-6736-40c3-ac7b-ab4ead5d8038" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>static</code></span><div class="indented"></div></li></ul><ul id="68bd8a5f-d11a-4ec1-806f-c367f11ea366" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>strictfp</code></span><div class="indented"></div></li></ul><ul id="0fa6fae0-5a61-4c44-bf25-ac59ef9517ad" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>super</code></span><div class="indented"></div></li></ul><ul id="d1046532-f26b-4555-a98e-56217e3319b0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>switch</code></span><div class="indented"></div></li></ul><ul id="69c2933a-c2a7-4793-9ae8-6d955e2ee4e7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>synchronized</code></span><div class="indented"></div></li></ul><ul id="8fc89bae-9cf8-4364-9e02-d44947097c99" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>this</code></span><div class="indented"></div></li></ul><ul id="a7da4db5-f68a-49c5-9cb2-44ec145fb451" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>throw</code></span><div class="indented"></div></li></ul><ul id="9f9dfe90-fc4e-489c-9ff8-52b3831d3da6" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>throws</code></span><div class="indented"></div></li></ul><ul id="52a7bd63-13f3-4b59-8479-cccd7d79921d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>transient</code></span><div class="indented"></div></li></ul><ul id="71d4d459-4923-42f2-bb1d-b2eaae4b525c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><code>try</code></span><div class="indented"></div></li></ul><ul id="e8e6d15d-80eb-4af6-b454-7c9b4d34ee97" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>volatile</code></span><div class="indented"></div></li></ul><ul id="241ff086-2c16-4858-9130-23fb9125b20c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>final</code></span><div class="indented"></div></li></ul><ul id="6062a2b1-1901-400e-8d4a-ac692bf9be87" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>abstract</code></span><div class="indented"></div></li></ul><h2 id="bfa684d5-51b0-466a-8f4d-4d70deff6b70" class="">Array</h2><ul id="e4bd2606-db2a-496b-a740-a77e8285db74" class="bulleted-list"><li style="list-style-type:disc"><code>int[] a;</code> (best practice)</li></ul><ul id="4cc13c8a-817d-4b94-8c14-2a52b532620b" class="bulleted-list"><li style="list-style-type:disc"><code>int[] a, b, c;</code></li></ul><h2 id="397f7ba5-9cb2-4c9c-bbcd-8c75406d8e93" class="">Loops</h2><ul id="4b607691-4732-460b-b4f7-ebce8c930356" class="bulleted-list"><li style="list-style-type:disc">Do-While</li></ul><ul id="33542b50-b98c-424f-97a1-4fdf43cd7b1e" class="bulleted-list"><li style="list-style-type:disc">While</li></ul><ul id="0ce7f84b-5e99-49db-aff7-dc89eb87b459" class="bulleted-list"><li style="list-style-type:disc">For</li></ul><ul id="f05c90a1-442b-40c7-b256-cbdb80d65842" class="bulleted-list"><li style="list-style-type:disc">For each</li></ul><h2 id="76c36e8f-87bd-42c6-ae37-bca076adea2b" class="">Conditions</h2><ul id="850684f7-bae0-4ded-b004-69e9cad13eea" class="bulleted-list"><li style="list-style-type:disc">if</li></ul><ul id="094bfe1f-3db5-4de9-8237-cf1a57398c4b" class="bulleted-list"><li style="list-style-type:disc">Switch<ul id="b9c7c6f7-da7a-4324-a420-ccc1284be0e1" class="bulleted-list"><li style="list-style-type:circle">Multiple cases: <code>case 2:</code>, <code>case 3:</code></li></ul></li></ul><h2 id="212e1222-964b-404e-9604-f3676be38c86" class="">Random</h2><ul id="b291d81e-6da4-44db-bc23-5025a56921d8" class="bulleted-list"><li style="list-style-type:disc"><code>a += b</code></li></ul><ul id="62018e49-4080-4687-832f-1294561ed406" class="bulleted-list"><li style="list-style-type:disc">Declare variables: <code>int a, b, c;</code>, <code>int a=10, b=20, c=30;</code>, <code>int a, b[], c[][]</code></li></ul><ul id="0ba7b05c-e824-499c-8aae-52a0697ef517" class="bulleted-list"><li style="list-style-type:disc">Ternary operator: <code>Condition ? rue : False</code></li></ul><ul id="89c2fbc4-1282-4295-8841-a1190c4dab58" class="bulleted-list"><li style="list-style-type:disc">Example: <code>int b = (a &gt; 1) ? 20 : 30;</code></li></ul><h2 id="b7709c92-6b42-47fd-9b47-4b5e99732416" class="">Data Types</h2><ul id="34275d2e-4074-4ac9-bc29-1676197e73d2" class="bulleted-list"><li style="list-style-type:disc">Choose appropriate data types based on required memory size: <code>byte - short - int - long - float - double - boolean - char</code></li></ul><ul id="62cc062b-4cf6-49b8-a51b-716e1344d4f0" class="bulleted-list"><li style="list-style-type:disc"><code>Math</code> class functions return <code>double</code> values.</li></ul><h2 id="a807ec3a-27ec-46a7-b277-2af224dbbeb0" class="">Functions</h2><h3 id="55f69492-7df0-4dd2-bb49-23203dae14ab" class="">Print</h3><ul id="2b0be90e-5cde-4fe4-aa1c-1ca8ec1d5877" class="bulleted-list"><li style="list-style-type:disc"><code>print</code></li></ul><ul id="beeb537b-5bc9-464f-a019-ab63385dfa96" class="bulleted-list"><li style="list-style-type:disc"><code>println</code></li></ul><ul id="4c78ecef-7a67-4c7a-9aa6-3eb5c1d3ba1b" class="bulleted-list"><li style="list-style-type:disc"><code>printf</code></li></ul><ul id="fe490800-8f53-4473-a001-ee569da71bd2" class="bulleted-list"><li style="list-style-type:disc"><code>System.out.printf(&quot;x = %d and y = %f&quot;, x, y);</code></li></ul><h3 id="468a1066-f509-4bd6-be5e-5acacc964b3d" class="">String</h3><ul id="74a46a1a-a758-40b4-bbfd-3f2c83767720" class="bulleted-list"><li style="list-style-type:disc"><code>char[] helloArray = { &#x27;h&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;l&#x27;, &#x27;o&#x27; };</code></li></ul><ul id="ed9f0ea7-eeed-4024-a8dd-ea5b9f82ff92" class="bulleted-list"><li style="list-style-type:disc"><code>String helloString = new String(helloArray);</code></li></ul><h3 id="220e69a0-7765-4f5e-b6aa-da86ae1cb599" class="">Math</h3><ul id="dd36554e-d614-4294-ad88-453122b31776" class="bulleted-list"><li style="list-style-type:disc"><code>ceil</code>/<code>floor</code></li></ul><ul id="09e030e0-69ea-4013-9ba5-d982e0859320" class="bulleted-list"><li style="list-style-type:disc"><code>rint(double)</code> - <code>round(long)</code></li></ul><ul id="f8699550-733a-41d3-a6f1-05aeb3d9d27e" class="bulleted-list"><li style="list-style-type:disc"><code>max</code>/<code>min</code></li></ul><ul id="799817de-2fb4-4872-b7ad-75e7a296a84f" class="bulleted-list"><li style="list-style-type:disc"><code>random</code></li></ul><h3 id="51e7b958-8246-463e-8e04-07c61a29500c" class="">String</h3><ul id="5d63763b-e334-468c-8ae4-0f8bbb8d1db0" class="bulleted-list"><li style="list-style-type:disc">Convert <code>char</code></li></ul><h2 id="81e4bc31-245b-47b8-b4ed-133f81d890ed" class="">Shortcuts</h2><ul id="fd83d087-b0fd-4938-a65f-eaf2a8d70533" class="bulleted-list"><li style="list-style-type:disc"><code>folder1.folder2</code>: Accessing nested folders or subdirectories.</li></ul><ul id="cce682bb-d503-4673-9e72-08bde9ffb93c" class="bulleted-list"><li style="list-style-type:disc"><code>Alt + Enter</code>: Keyboard shortcut to show suggestions or perform quick fixes in an integrated development environment (IDE).</li></ul><ul id="7a531063-bb76-4937-a030-93adda58b275" class="bulleted-list"><li style="list-style-type:disc"><code>F2</code> - Go to error: Keyboard shortcut to navigate to the location of an error in the code.</li></ul><ul id="be4f1184-3b98-4ebb-a3c8-9033211306a1" class="bulleted-list"><li style="list-style-type:disc"><code>Alt + 1</code> - Toolbox: Keyboard shortcut to open the toolbox or tool window in an IDE.</li></ul><ul id="2de836d5-3a39-4b66-a2fb-c3dd3d84c984" class="bulleted-list"><li style="list-style-type:disc"><code>Ctrl + E</code> - Open recent file: Keyboard shortcut to open a recently accessed file in an IDE.</li></ul><ul id="3b1c2dd1-718f-42ac-a07c-d0de4c100d01" class="bulleted-list"><li style="list-style-type:disc"><code>Shift + Ctrl + Slt + T</code>: Keyboard shortcut to navigate to a specific class or file in an IDE.</li></ul><ul id="38d66d4a-3f7f-4d97-bffb-f393ca8fba1b" class="bulleted-list"><li style="list-style-type:disc"><code>Ctrl + Y</code>: Keyboard shortcut to delete a line of code.</li></ul><ul id="b3c9653c-c3cc-4310-bcfa-f1bc38eb7e8f" class="bulleted-list"><li style="list-style-type:disc"><code>Ctrl + Shift + Enter</code> - Add a semicolon at the end of a statement: Keyboard shortcut to automatically add a semicolon at the end of a line in an IDE.</li></ul><ul id="2788f445-0c3d-466a-8ea7-b644ba950b6c" class="bulleted-list"><li style="list-style-type:disc"><code>Alt + Insert</code> - Generate getters/setters: Keyboard shortcut to automatically generate getter and setter methods for class fields in an IDE.</li></ul><ul id="ba76d0f5-53ef-4878-8787-cacd5f7ab1fb" class="bulleted-list"><li style="list-style-type:disc"><code>Ctrl + Alt + Format Code</code>: Keyboard shortcut to format or beautify code in an IDE.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

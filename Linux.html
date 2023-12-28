@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Linux</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7dea6ed0-1dac-44ea-bd1c-44d1b3225702" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/document_red.svg"/></div><h1 class="page-title">Linux</h1><p class="page-description"></p></header><div class="page-body"><h1 id="17bcedd9-85fe-40f4-8c3c-a4767922b2b3" class="">Table of Contents</h1><h3 id="eb3fc757-8c50-4549-90e9-d0b6aeff9f1e" class="">–&gt; Theoretical</h3><ol type="1" id="4e52ada6-c1ee-40a6-957f-c1ea149345db" class="numbered-list" start="1"><li>command_types</li></ol><ol type="1" id="6c00e007-1fb5-4723-b77d-bce1223d7cbf" class="numbered-list" start="2"><li>General</li></ol><ol type="1" id="bc0797d9-9bd3-4a0d-8772-6929cf413c5b" class="numbered-list" start="3"><li>types of shell</li></ol><ol type="1" id="b17f60f4-76a6-4253-9102-db7c864b435b" class="numbered-list" start="4"><li>Boot</li></ol><ol type="1" id="4d8d1af9-f4fa-42a8-88d5-29160be4c7fc" class="numbered-list" start="5"><li>Hardware</li></ol><ol type="1" id="57b888b9-8bfb-41fa-8c82-0225a9009761" class="numbered-list" start="6"><li>Package Manger</li></ol><ol type="1" id="c14d2f4f-5df3-4d55-9dfd-1a54865f3a6c" class="numbered-list" start="7"><li>Hardware &amp; Kernel</li></ol><ol type="1" id="6a0fd67c-a73c-40c8-8873-7a28d0794f75" class="numbered-list" start="8"><li>Accounts</li></ol><h3 id="123de200-49cb-4ee9-993e-0de71f549654" class="">–&gt; Main commands</h3><ol type="1" id="226aa9c1-42cb-4b8c-bcf2-e516704e232c" class="numbered-list" start="1"><li>touch</li></ol><ol type="1" id="f8b2efef-36d4-4983-bb51-079d8a7c32fc" class="numbered-list" start="2"><li>mkdir</li></ol><ol type="1" id="f846dc76-c453-4d76-b16a-cd223a1bf123" class="numbered-list" start="3"><li>cp</li></ol><ol type="1" id="3762a75d-bf9e-47bd-9958-cadf5508fe65" class="numbered-list" start="4"><li>mv</li></ol><ol type="1" id="bd489b31-65b9-437e-9b0a-5ecb552a155c" class="numbered-list" start="5"><li>ln</li></ol><ol type="1" id="063a6a8a-b2db-4b2f-9b6f-495b8d38a170" class="numbered-list" start="6"><li>rm</li></ol><ol type="1" id="b10d57c4-a45e-49ea-a1f2-90c6a1e6d8ba" class="numbered-list" start="7"><li>pwd</li></ol><ol type="1" id="bab6ff66-8113-414a-8db6-e44f2256c984" class="numbered-list" start="8"><li>ls</li></ol><ol type="1" id="b421da86-27ce-43c2-8f80-087f6bf0726d" class="numbered-list" start="9"><li>cd</li></ol><ol type="1" id="0d2a0fe8-1430-4e53-b3ff-d596d336d5b7" class="numbered-list" start="10"><li>cat</li></ol><ol type="1" id="ccf6bce2-0353-45ee-8c42-ea2595062951" class="numbered-list" start="11"><li>more_less</li></ol><ol type="1" id="98ee1b65-24d2-4bce-9458-3e11db7b7b03" class="numbered-list" start="12"><li>echo</li></ol><ol type="1" id="55f03aaf-59bc-4f34-9769-dbd53cbbcb9e" class="numbered-list" start="13"><li>cat &gt;&gt;</li></ol><ol type="1" id="81063ee0-5c76-43a0-b380-ac362cc31d78" class="numbered-list" start="14"><li>printf</li></ol><ol type="1" id="9927007e-3c8b-406d-a8e8-df9e71ed7d20" class="numbered-list" start="15"><li>vi_editor</li></ol><ol type="1" id="8f7e6e2b-ef88-4e5e-8b05-172a87b46def" class="numbered-list" start="16"><li>whatis</li></ol><ol type="1" id="46e90cc1-409f-48b4-8eae-1e216886c044" class="numbered-list" start="17"><li>help</li></ol><ol type="1" id="4b526d03-5379-4a9d-bf0b-3cfba7b92bce" class="numbered-list" start="18"><li>info</li></ol><ol type="1" id="f814f402-cb11-4f50-b90f-ba1e65f7de23" class="numbered-list" start="19"><li>apropos</li></ol><ol type="1" id="0d73488d-3f1e-4539-aeac-dbfb1a55ed30" class="numbered-list" start="20"><li>grep</li></ol><ol type="1" id="e4532514-a4f9-4d6f-b8bf-bc8110a974fe" class="numbered-list" start="21"><li>find</li></ol><ol type="1" id="5db18d78-13f4-40cf-bf77-5aacc3849d29" class="numbered-list" start="22"><li>locate</li></ol><h3 id="06d15601-50f7-4994-91aa-62d601e81e96" class="">–&gt; Files</h3><ol type="1" id="92c2593c-1760-4eea-94f3-640a9602effa" class="numbered-list" start="1"><li>/root files</li></ol><ol type="1" id="621d1167-69e7-40e8-845d-de73cc43762c" class="numbered-list" start="2"><li>type of files</li></ol><p id="83ece392-386c-4ad1-a8a3-ae3f67c5fa62" class="">–&gt; ZIP 1. du 2. tar 3. bzip2 - gzip - xz 4. zcat - bzcat - xzcat</p><h3 id="e4c41716-53eb-4b3c-b1d7-7fca60f50a63" class="">–&gt; Networking</h3><ol type="1" id="243de8ef-873f-496c-b579-66542ac4d8bb" class="numbered-list" start="1"><li>ssh</li></ol><ol type="1" id="6533c15e-0149-43ff-80b3-ac22e6340a11" class="numbered-list" start="2"><li>scp</li></ol><h3 id="70d3e6f3-4585-4b88-806f-187f06dfeca8" class="">–&gt; Others</h3><ol type="1" id="614e5e97-2c57-4736-8c83-cf2538e0868b" class="numbered-list" start="1"><li>/dev/null = Dump Place</li></ol><ol type="1" id="268d4793-5df9-4dd5-9a10-2caf0ac87b4f" class="numbered-list" start="2"><li>Ctrl + c = Exit</li></ol><ol type="1" id="75569078-764c-465b-8a76-173edcf14811" class="numbered-list" start="3"><li>df = to show disk space in the system</li></ol><ol type="1" id="391477a0-6e7e-45c4-9dd1-59a93f1a1957" class="numbered-list" start="4"><li>man ls = all commands</li></ol><ol type="1" id="ac21e094-8817-4026-8f7a-c8cba437b9d5" class="numbered-list" start="5"><li>history = show all previouse commands</li></ol><ol type="1" id="9c1653ff-953d-4883-a77d-b0344ebf071e" class="numbered-list" start="6"><li>clear = clear terminal</li></ol><h3 id="c217df46-c587-4706-a3b6-11106d80c139" class="">–&gt; Hacks</h3><ol type="1" id="d89e5f38-65fb-42e2-8b25-c7ee6ed6a29e" class="numbered-list" start="1"><li>echo ahmed  tee -a sample.txt<p id="af13903d-e05c-48d0-af68-eadfec471159" class="">|</p></li></ol><ol type="1" id="151118df-e3d8-44d0-92e6-58f9b0eb5e9f" class="numbered-list" start="2"><li>alias dt =date</li></ol><ol type="1" id="4f41c130-2f32-4641-bd80-0640a3f68471" class="numbered-list" start="3"><li>touch  sample.txt<p id="787b6fcf-4b7c-4351-b4bd-327abdcb61cd" class="">/home/bob</p></li></ol><ol type="1" id="012a21e1-1b85-48d3-b180-d6363307d444" class="numbered-list" start="4"><li>echo “ahmed”    sample.tx<p id="84721c71-2ada-4246-bdb3-2f8680d427ae" class="">|</p><p id="cd31679a-9f13-4b9a-944a-aefd1fc23ef2" class="">tee</p><ul id="ac323f34-4337-411f-96f5-453512cc6f6d" class="bulleted-list"><li style="list-style-type:disc">a</li></ul></li></ol><h3 id="79ca6b87-1343-407c-b64a-4b8ba1956983" class="">–&gt; + Practicing</h3><ol type="1" id="d3dbb450-22ed-4d94-8984-ab387fe63cdb" class="numbered-list" start="1"><li>Varibles $HOME + add vari</li></ol><ol type="1" id="99b33ca8-a148-4729-9edf-30a151eeeaa0" class="numbered-list" start="2"><li>find vs grep</li></ol><ol type="1" id="5f111801-6219-40ed-83bd-503f5124cfcf" class="numbered-list" start="3"><li>link</li></ol><ol type="1" id="ce4bf42e-9d2a-4430-858b-03f176755751" class="numbered-list" start="4"><li>ls txt<p id="cfd25298-7581-4936-be3b-9c39d1f4af7b" class="">?1</p></li></ol><ol type="1" id="1372acfe-c0d3-4353-b840-823402b113f4" class="numbered-list" start="5"><li>pushed/poped</li></ol><ol type="1" id="e24ad88e-27b5-4d21-8e19-8ef64b9aa78c" class="numbered-list" start="6"><li>enc</li></ol><hr id="ab2d30dc-0030-419b-b95c-58d13bbabe74"/><h2 id="28b55d06-84f8-4526-9ada-ed3566b1b0e1" class=""># Commands</h2><h2 id="369998be-33cd-4427-b8ae-e05f6c036786" class="">Theoretical</h2><h3 id="6f563a69-ff16-47ef-8e5f-61c8e42bd4b5" class="">#command_types</h3><p id="a1bf5ca8-d9ba-4f5e-b43c-f58e3aa691e2" class="">2 Types <strong>internel( pwd, cd, ..) &amp; externel (mc, cp, ..)</strong>. You can heck the type throw type command.</p><h3 id="07bc2bf0-f767-46b2-b2dc-0d20bf83e671" class="">#General</h3><ul id="f124f612-2f6f-4eeb-a444-fdc5c4d21bb8" class="bulleted-list"><li style="list-style-type:disc">$ = User prompt Symbol</li></ul><ul id="09d9e239-f762-482f-af0f-0581469a0e95" class="bulleted-list"><li style="list-style-type:disc">env = to show the varibles</li></ul><ul id="f437f123-3f74-49fb-b2c9-d4ab6d35392d" class="bulleted-list"><li style="list-style-type:disc">~ = present dirctory</li></ul><ul id="2f480c22-9a52-4076-9d50-34e30c7e7e6b" class="bulleted-list"><li style="list-style-type:disc">$<p id="98bc7844-2d5b-453f-aa88-7dca10af9028" class="">PS1</p><ul id="91e7a6d7-3d19-4dc3-8290-ac46b18cc8ec" class="bulleted-list"><li style="list-style-type:circle">/w  = means the current user</li></ul><ul id="2abad56d-05de-4666-99c3-3e7981e8c2d3" class="bulleted-list"><li style="list-style-type:circle"></li></ul></li></ul><h3 id="443f82b2-89ab-49e2-b99a-eabc0aacac14" class="">#types of shell</h3><ul id="7c1ce5f9-b6da-43cb-9cf3-d73abe8c6174" class="bulleted-list"><li style="list-style-type:disc">Bash = Auto Compleation3</li></ul><ul id="df1385c1-942f-490f-ad0a-001c15cba8dc" class="bulleted-list"><li style="list-style-type:disc">chsh = to change the shell</li></ul><h3 id="7e9f0b70-4312-4ee7-8a78-0938ad412e8c" class="">#boot</h3><p id="eb2099da-70f9-49c6-80e7-cbd5af638f4c" class="">moodes or run lvl - graphical lvl-5 - non graphical lvl-3 - runlevel - systemctl get-default - la -ltr /etc/systemd/system/default.target - systemctl set-default multi-user.target = switch lvl 5 –&gt; 3 - <strong>runlevel 0 -&gt; poweroff.target</strong> - <strong>runlevel 1 -&gt; rescue.target</strong> - <strong>runlevel 2 -&gt; multi-user.target</strong> - <strong>runlevel 3 -&gt; multi-user.target</strong> - <strong>runlevel 4 -&gt; multi-user.target</strong> - <strong>runlevel 5 -&gt; graphical.target</strong> - <strong>runlevel 6 -&gt; reboot.target</strong></p><h3 id="28f44b83-a4ce-491b-acc7-bd229db38b96" class="">#Package Manger</h3><p id="0a672edc-0991-4735-b547-b21e6596ffac" class="">Packge is a Compressed archive that conatins all reqiuerd files to run a software.</p><p id="c6f93d5a-9243-4fcb-b9bc-ec0a4f65f2f2" class="">Two types DEB or RPM</p><h3 id="e28b472a-d10d-4ee0-9c8a-d5a55f95870e" class="">DEB</h3><p id="1355a849-a0a0-48bf-8432-c8a8ea04ab88" class="">The deb it’s the main package that deals with packge.</p><p id="a62a6a19-6414-4fd0-9ce4-9e42581d4459" class="">[[Pasted image 20220806221513.png]]</p><p id="7b79ebde-dbc3-469a-aae0-f6a233ba35ed" class="">more powerful packge apt &amp; get-apt - apr update - apr upgrade - apr edit-sources - apt install talent - apt remove talnet - apt search talenet - apt list | grep telnet</p><h3 id="1c981afc-d76d-4819-8bd8-601a5ecf6c60" class="">#Hardware &amp; Kernel</h3><p id="7d7325a5-8d71-4f74-8995-08f609370b93" class="">–&gt; Hardware - dmesg = display a details messages - udevadm monitor = in/out devices - lspci = detail od devices that attach to the motherboreds such as wireless adapter - lsblk = details about a physical storage - lscpu = detail about the cpu - lsmem –summary = show much space an empty - free -m = m means mb , gb . tb = show how much space - lshw = deatlis about the hardware</p><p id="536b9d89-93b9-4c18-98be-56cc2e084f32" class="">–&gt; Kernel kernel types = mange - memory , process, Device, System Calls &amp; Swcurity - uname = print the kernel name - uname -r = print the kernek version</p><h2 id="29437775-9530-420e-9992-d3cf57fed64e" class="">Main Commands</h2><h3 id="928223a4-6667-46db-b319-a60335014060" class="">#mv</h3><ul id="8c1091c7-3d75-4674-b5bd-1ec233f04413" class="bulleted-list"><li style="list-style-type:disc">mv /home/sample.txt //home/bob</li></ul><ul id="157d9fe1-559e-476e-b7a2-c4598ffd16dc" class="bulleted-list"><li style="list-style-type:disc">#cd</li></ul><ul id="a178588c-b670-4aa0-be4e-0c085bf94363" class="bulleted-list"><li style="list-style-type:disc">cd = go root directory</li></ul><ul id="2fb8944f-51ed-4354-a5b0-277fcdbd2c64" class="bulleted-list"><li style="list-style-type:disc">cd /home/bob = go to bob directory</li></ul><ul id="31c8a5fe-74df-4a8c-9a97-a9ea11911cdb" class="bulleted-list"><li style="list-style-type:disc">cd ../ = go to previouse directory</li></ul><ul id="cc975b2c-9bd1-4feb-b1f3-44fc96a5aba6" class="bulleted-list"><li style="list-style-type:disc">cd - = go to previose directory</li></ul><h3 id="ad5f1df3-86e5-4537-bdc1-cc9fbef248cb" class="">#ls</h3><ul id="21e7fa47-6d0d-4b9f-bcc2-082df1004e87" class="bulleted-list"><li style="list-style-type:disc">ls /Desktop = print list of files</li></ul><ul id="b3d31672-2871-4d7b-8c38-e8b5bccc5830" class="bulleted-list"><li style="list-style-type:disc">ls -l /Desktop = list with more detalis + file type</li></ul><h3 id="b167937f-4427-46d7-ab3e-c53fb35c2fb5" class="">ln</h3><p id="a4927278-ec4a-4650-b594-a32c4f9e273e" class="">each file have an inode id = wich contain information about it such as permission and size except the name of the file &amp; data store inside the file.</p><ul id="4f507acc-27ae-488a-ad3a-341c9513ad50" class="bulleted-list"><li style="list-style-type:disc">softLink = shortcut for a file<ul id="993ab3d7-d18f-40cc-ab1d-3f4a87003495" class="bulleted-list"><li style="list-style-type:circle">ln -s /home/bob/sample.txt /home/s.txt</li></ul></li></ul><ul id="bc492c89-dd6e-4056-8a2d-c823aec40fad" class="bulleted-list"><li style="list-style-type:disc">hardLink = use as a copy of the original file<ul id="04b4f4aa-9153-4fa5-b548-c146052287ee" class="bulleted-list"><li style="list-style-type:circle">ln source link</li></ul></li></ul><h3 id="cc960b70-7fe0-4daa-8038-5688f87fb4fd" class="">#rm</h3><ul id="d8998cd6-dd32-43c0-841c-4be518f0a985" class="bulleted-list"><li style="list-style-type:disc">rm = remove files</li></ul><ul id="285a7dcb-cb04-4641-aa69-c8e0938b5609" class="bulleted-list"><li style="list-style-type:disc">rm -R = remove folders</li></ul><h3 id="adf50cb9-de42-40b0-af34-8dbd04646e79" class="">#Grep</h3><ul id="70af67c0-7afa-4e79-b219-c7f6add5c4d4" class="bulleted-list"><li style="list-style-type:disc">grep = used to print lines that matches a pattern</li></ul><ul id="ba379b18-8e3f-4d54-ba29-ea1885ee3568" class="bulleted-list"><li style="list-style-type:disc">grep ahmed sample.txt</li></ul><ul id="772fec5c-6e48-4053-a93d-9f566ce12e19" class="bulleted-list"><li style="list-style-type:disc">grep  = i insensitive<ul id="c0d759dd-d274-435e-a03a-0738b8729a75" class="bulleted-list"><li style="list-style-type:circle">i</li></ul></li></ul><ul id="94ebad23-b814-4655-a24f-a5f80c7c9659" class="bulleted-list"><li style="list-style-type:disc">grep  “ahmed” /home/bob = to find this pattern in all files<ul id="beb2aee4-78e5-4d98-a0f4-51c88fcfc90f" class="bulleted-list"><li style="list-style-type:circle">r</li></ul></li></ul><ul id="87e5f5ed-f716-4a98-af47-8716dd74b154" class="bulleted-list"><li style="list-style-type:disc">grep  “ahmed” sample.txt = don’t print line have the pattern<ul id="cf1c87f5-ac5b-435e-a4dd-198e7fe5c8a7" class="bulleted-list"><li style="list-style-type:circle">v</li></ul></li></ul><ul id="021de4e4-a5a5-4b92-9ae5-2e0038c656d4" class="bulleted-list"><li style="list-style-type:disc">grep  = for search as word not a pattern<ul id="7e014d09-f264-44c0-8d86-023085396094" class="bulleted-list"><li style="list-style-type:circle">w</li></ul></li></ul><ul id="0fe8da2c-b673-4cca-9d4d-4e081228c812" class="bulleted-list"><li style="list-style-type:disc">grep  = to print wthe line + one line after<ul id="7f9ab494-a20f-4503-9ca3-9d8d265d334d" class="bulleted-list"><li style="list-style-type:circle">A1</li></ul></li></ul><ul id="50eece7b-f631-41d6-9363-79de3466fab9" class="bulleted-list"><li style="list-style-type:disc">grep  = to print the line + one line before<ul id="4e6875d6-8abc-47e5-a634-ba0e18f35d31" class="bulleted-list"><li style="list-style-type:circle">B1</li></ul></li></ul><ul id="161fa1a6-fc87-4b01-a76e-63fc2fb9dd1d" class="bulleted-list"><li style="list-style-type:disc">grep <ul id="413ce2cc-a355-48f1-b30a-543f8547643d" class="bulleted-list"><li style="list-style-type:circle">A1</li></ul><ul id="c6b99993-39c9-4bfe-bf65-fca6935c6cd6" class="bulleted-list"><li style="list-style-type:circle">B1</li></ul></li></ul><h3 id="73d945ca-9cdd-4fb4-9b6b-4f2ad3a49a52" class="">#find</h3><p id="d7e589f5-fa2e-47f2-9cdc-8aa6572e62d9" class="">For finding files in a folder - find path -name sample.txt - find path -name</p><p id="f3fcd1d4-be15-43a2-af6f-f7ac96baef02" class="">- ^.test, sample.^ - find / -name  sample = find in the root</p><p id="9c2a7035-5b1f-4259-b6f0-d94217efacc3" class="">Flags = mtime, name</p><h3 id="03c56789-37ee-488a-9e8c-2be65b0bcf39" class="">#Locate</h3><p id="eb0506e3-485c-45d1-9107-1eb7dd7a9cf2" class="">use to find a file in a folder like find. but more simple i thinl somtimes we should use updatedb to add new location to the DB.</p><h3 id="dde6ce2d-0601-4dec-af94-192c63223e2a" class="">#Cat</h3><ul id="1bc75914-a2e5-48ef-9c32-5e6ee8536186" class="bulleted-list"><li style="list-style-type:disc">cat &gt; sample.txt = Over writing the file only if there are a data (text) inside it.</li></ul><ul id="442de09f-b0d5-4aa8-a43e-469b1d4463b5" class="bulleted-list"><li style="list-style-type:disc">cat &gt;&gt; linux.txt = creat a file or open and write it down.</li></ul><h3 id="f61a4d04-b187-4e12-87e1-f63848b0d191" class="">#More_Less</h3><p id="abe932a1-c8c9-43f8-aeed-b586d1e2b9b5" class="">–&gt; Less - q = to exit - ?!</p><p id="5c0eba08-1d41-4d48-9f3c-fde43443c0ed" class="">–&gt; More - Go throw multiple files - more file1 file2 file3</p><h3 id="56a23fe6-0655-4aa2-95c2-b06821cfef78" class="">#echo</h3><ul id="790a3885-6929-409f-b2de-23d434b9cf28" class="bulleted-list"><li style="list-style-type:disc">echo “ahmed”  sample.txt = ovreriddien the file &amp; add ahmed<p id="8f8d4803-5a8e-4a57-b24e-3db131764f2a" class="">&gt;</p></li></ul><ul id="0512783f-aaa7-4338-86f0-fc2a2e7b3453" class="bulleted-list"><li style="list-style-type:disc">echo “ahmed”  sample.txt = add ahmed on a new line<p id="6e7cca56-c771-4984-9a7c-b88bea35d787" class="">&gt;&gt;</p></li></ul><ul id="80dafd06-081f-4d8d-a27a-83e92c6e3f78" class="bulleted-list"><li style="list-style-type:disc">for erorr use<p id="70fe3a46-56ef-4730-b910-19d395d201f0" class="">2&gt; or 2&gt;&gt;</p></li></ul><h3 id="95326f16-8d80-4e74-9b4e-afb74cda04c2" class="">#vi editor</h3><p id="33130c56-b4a9-4224-b742-944b4eeb023b" class="">Moodes - command(esc ) - copy paste - insert (i) - writing - last(:) - save discard</p><ul id="5fe823eb-9607-45d5-99c2-f4fcaef05335" class="bulleted-list"><li style="list-style-type:disc">vi = to edit a file</li></ul><ul id="1b23a87f-090d-4845-ad11-225324096469" class="bulleted-list"><li style="list-style-type:disc">yy = for copy</li></ul><ul id="908f69eb-ead8-46a9-b71f-d2ad46302849" class="bulleted-list"><li style="list-style-type:disc">p = paste</li></ul><ul id="7606a5e9-16ac-4a1f-9f9e-a82765605d35" class="bulleted-list"><li style="list-style-type:disc">u = undo</li></ul><ul id="c088982c-b043-41d8-8ca7-4e40dc7caf7f" class="bulleted-list"><li style="list-style-type:disc">redo = ctrl + r</li></ul><ul id="fbb3c29c-5d51-40ac-ac6e-b5052d5d03c5" class="bulleted-list"><li style="list-style-type:disc">zz = for saving</li></ul><ul id="fded7a07-e97d-43ab-8305-23b67450cdda" class="bulleted-list"><li style="list-style-type:disc">x = delete</li></ul><ul id="8b35dc28-85e2-4014-b3d9-590a4a276f87" class="bulleted-list"><li style="list-style-type:disc">dd = delete line</li></ul><ul id="8a9e9893-6f37-4dd2-9419-ecbe2cefede0" class="bulleted-list"><li style="list-style-type:disc">d3d = delete 3 lines</li></ul><ul id="595eb7e5-73b6-4486-b039-65d6831881f2" class="bulleted-list"><li style="list-style-type:disc">esc = to get out</li></ul><ul id="d1ae1f5e-796a-43d6-99bc-6609733c1004" class="bulleted-list"><li style="list-style-type:disc">/search = to find a word</li></ul><ul id="36c6317b-9aa3-4b0a-a08e-0aaca12e1d93" class="bulleted-list"><li style="list-style-type:disc">?search = to find a word</li></ul><ul id="eb211d22-d5aa-4ee9-904d-69124d6ff170" class="bulleted-list"><li style="list-style-type:disc">n = find next or up</li></ul><ul id="480fecb5-455e-482a-99c5-b7d88fa32d44" class="bulleted-list"><li style="list-style-type:disc">N = find previous or down</li></ul><ul id="2dec6930-dedd-4852-9f99-8308989a12f0" class="bulleted-list"><li style="list-style-type:disc">:w = to save</li></ul><ul id="3b15415c-842d-4276-8a41-6bfffc17d457" class="bulleted-list"><li style="list-style-type:disc">:q = quit</li></ul><ul id="8c19870f-93f9-4014-9ae8-621a498ed013" class="bulleted-list"><li style="list-style-type:disc">:wq = save &amp; quit</li></ul><ul id="f7d2df3d-36a5-4319-afcb-a1aea91204db" class="bulleted-list"><li style="list-style-type:disc">:q! = quit without save</li></ul><h3 id="8fd2b8b5-860d-49ee-ae55-1733dcb22934" class="">#whatis</h3><p id="04cd4bfe-7395-4651-a892-e7ab334965e3" class="">use for getting one line information about a command - whatis touch</p><h3 id="c12d9add-8635-48e5-8f1e-3da681066e37" class="">#man</h3><p id="d1c08559-3680-4f4c-81be-a70693966408" class="">give the user more details about a command such as the arguments</p><h3 id="27bc8f10-2c9c-48fa-ab2e-11b2200152f6" class="">#apropos</h3><p id="be0f5ddf-8676-43e7-a09a-1eead78ba41d" class="">give all command that related to the argument - apropos tcp</p><h2 id="0864938a-4f86-4c24-bfa3-c1433d21af91" class="">Files</h2><h3 id="21209d5f-bf16-4a32-a09b-d960dd650ef2" class="">root files</h3><p id="95504b37-1fa2-4431-be0d-19f0e040779c" class="">[[Pasted image 20220806173901.png]]</p><h3 id="b0c76e0a-0575-4c0f-80f3-7eb0689deb45" class="">file types</h3><p id="dd3962d6-b3bf-48fb-aa18-2dae891f8e79" class="">every thing in linux is a file</p><p id="dc11afa7-9bda-4cdc-8347-1ea0d7717d0e" class="">[[Pasted image 20220806155549.png]]</p><ul id="901fcd52-59b3-42b9-b46b-b639e55f9f25" class="bulleted-list"><li style="list-style-type:disc">Type of Files<ul id="ae949f47-2411-4361-a8bd-56d3597bf79b" class="bulleted-list"><li style="list-style-type:circle">Regular Files = Images, Scriots, DataFiles, ..</li></ul><ul id="558a4199-3b44-4e57-b462-04f23576a65a" class="bulleted-list"><li style="list-style-type:circle">Directory = /home, /root</li></ul><ul id="2830f3e7-dfb7-4d9c-9d7f-8a46f48eac78" class="bulleted-list"><li style="list-style-type:circle">Special File =<ul id="096a38f5-ce73-4b24-af07-8dd8cf493d0b" class="bulleted-list"><li style="list-style-type:square">/dev =<ul id="d8ded174-e81a-4218-b977-d153122e2b75" class="bulleted-list"><li style="list-style-type:disc">charater(for I/O communication )</li></ul><ul id="3a64252c-ce4c-404b-968c-f8c0f964507a" class="bulleted-list"><li style="list-style-type:disc">Block ( reads and write from a block such as ram)</li></ul></li></ul><ul id="7c0b9130-762e-4b7d-9bf6-98a4a6e49ee8" class="bulleted-list"><li style="list-style-type:square">Links<ul id="5b0ec227-302c-4a23-8631-e39326dda6cc" class="bulleted-list"><li style="list-style-type:disc">Hard Links = if u delete links u will lose the data</li></ul><ul id="71a17109-a9dc-425c-a5fe-b4c395910dc8" class="bulleted-list"><li style="list-style-type:disc">Soft Links = pointers won’t lose data if deleted</li></ul></li></ul><ul id="3b9edae9-b7d4-4ca9-a041-d14625435b4d" class="bulleted-list"><li style="list-style-type:square">Socket = communication betwenn two Process</li></ul><ul id="cadf96c9-127c-4b03-b552-098fbeda8987" class="bulleted-list"><li style="list-style-type:square">Named Pipes = use for sending data from a process to another</li></ul></li></ul></li></ul><ul id="b3ab546a-ee74-430c-8d64-cecc35130911" class="bulleted-list"><li style="list-style-type:disc">To know the type of the file use –&gt;<p id="466e11ad-c7fa-4899-9360-cd97961987b2" class="">file</p></li></ul><h3 id="ce483b35-feb4-4865-9a5e-f2e628a8593d" class="">ZIP</h3><h3 id="2948bbc3-dd7b-4217-b307-6007b21cd7f5" class="">du</h3><ul id="3dd9d88a-ba94-485b-9dfe-24bcac35a40e" class="bulleted-list"><li style="list-style-type:disc">du -sk imag.img = size of a file in kb</li></ul><ul id="1146a45b-ee40-45d7-a875-ced4bf9819cd" class="bulleted-list"><li style="list-style-type:disc">du -sh sample.txt = show as human view</li></ul><h3 id="f8ef419a-85e0-41e8-af5d-96a8abc4eedd" class="">tar</h3><ul id="89291fcc-88a5-49a1-b64f-5af8b1ead295" class="bulleted-list"><li style="list-style-type:disc">tar -cf (c creat f file ) file 1 file 2 file3<p id="c6d62d7e-193f-4a27-8f13-2621573a4e16" class="">test.tar</p></li></ul><ul id="a5a9706e-98bb-4ab3-a41c-d35a0aa2fe29" class="bulleted-list"><li style="list-style-type:disc">tar -tf  = to show files inside it</li></ul><ul id="0ea8fcf9-e55b-4aec-bfcf-23a13bea3b40" class="bulleted-list"><li style="list-style-type:disc">tar -xf = to extract files</li></ul><ul id="3478dec1-4fb5-4f38-87b7-55618dc7ebf0" class="bulleted-list"><li style="list-style-type:disc">tar -z = to compression</li></ul><h3 id="5465575b-569e-4272-9b08-a83c1cd7aefb" class="">compression</h3><p id="2aab2d48-4e4b-4202-89c4-de23d1a96373" class="">[[Pasted image 20220806223637.png]]</p><h3 id="e9d583c1-57a4-4a22-a957-8ed5bbc91752" class="">read without extraction</h3><p id="1419b313-00a9-4957-9736-9be88bd0925c" class="">[[Pasted image 20220806223744.png]]</p><h2 id="f66ee0a4-fd8c-45a2-9011-9562b0d4c221" class="">Accounts</h2><ul id="3f8dff10-d915-4df0-ba6c-b573f87593aa" class="bulleted-list"><li style="list-style-type:disc">Each user have an acoount<p id="f2e06432-2cf4-4732-8b07-cdaa835e151e" class="">UID</p></li></ul><ul id="145156f3-5625-4a8a-9696-169bf0e6dc23" class="bulleted-list"><li style="list-style-type:disc">group  = collection of users<p id="228865a5-cad5-42ce-826c-5002fedb666a" class="">GID</p></li></ul><ul id="df5ec7db-e423-4d7c-9c13-43729b50c5b2" class="bulleted-list"><li style="list-style-type:disc">the data store in<p id="27d1e856-00e8-42ae-8dfb-ff898b369e78" class="">/etc/passwd</p></li></ul><ul id="800e631a-cdfc-4030-ba90-835a684a3971" class="bulleted-list"><li style="list-style-type:disc">the group data store in<p id="55c0231c-959c-4657-b395-3ab820b60796" class="">/etc/group</p></li></ul><ul id="7b976f91-01ef-4aff-a174-b6c42dad50fa" class="bulleted-list"><li style="list-style-type:disc">use for giving access to some files</li></ul><ul id="e2b11e63-1d5f-4102-922c-f404b68f947a" class="bulleted-list"><li style="list-style-type:disc">id ahmed</li></ul><ul id="9cee2412-69c8-4f38-9dc4-728696b44a74" class="bulleted-list"><li style="list-style-type:disc">account types<ul id="8c986263-6c80-4819-aba6-65c335f0e75c" class="bulleted-list"><li style="list-style-type:circle">user</li></ul><ul id="9f45c56f-2298-4903-9f8b-c6cf4f92d3d2" class="bulleted-list"><li style="list-style-type:circle">super user (root)</li></ul><ul id="4f0dc090-6000-4100-b315-e80b65d8d934" class="bulleted-list"><li style="list-style-type:circle">system</li></ul><ul id="7fd6ab46-4b87-47b2-a87f-966aad0a5918" class="bulleted-list"><li style="list-style-type:circle">services</li></ul></li></ul><ul id="0d947052-da40-4725-ad4b-63690e74fda5" class="bulleted-list"><li style="list-style-type:disc">who = wich account</li></ul><ul id="dae9f2cc-ed5b-46c9-9a45-e165b7178d7a" class="bulleted-list"><li style="list-style-type:disc">last = last login</li></ul><ul id="1c7a362a-09ec-4843-8695-3c1e9def05b1" class="bulleted-list"><li style="list-style-type:disc">/etc /sudores = to give a access premession to the users</li></ul><ul id="5ff5189b-7929-4177-8151-735e15c84585" class="bulleted-list"><li style="list-style-type:disc">useradd</li></ul><ul id="f8669596-f2ee-4b8a-857d-fbadfc220d9a" class="bulleted-list"><li style="list-style-type:disc">passwd</li></ul><ul id="c2bac457-469c-4d63-b185-70aab4ef25f5" class="bulleted-list"><li style="list-style-type:disc">whomi</li></ul><ul id="aa5b7103-380b-41b7-b7cc-42e5f8ebece2" class="bulleted-list"><li style="list-style-type:disc">userdel bob</li></ul><ul id="aeba537d-5fe8-405c-a401-33419e30f496" class="bulleted-list"><li style="list-style-type:disc">groupadd -g 1011 developer</li></ul><ul id="2c9d064a-84dc-48f3-b4db-30713717808c" class="bulleted-list"><li style="list-style-type:disc">groupdel</li></ul><p id="66ec541a-140a-420c-ae29-ee525701ba98" class="">–&gt; /etc/passwd - u can’t use vi editor - only access is root - password in etc/shadow</p><p id="39a96026-ec19-4eed-bea9-9a0713cb04f4" class="">–&gt; file premession - [[Pasted image 20220808143454.png]] - ![[Pasted image 20220808143617.png]] - [[Pasted image 20220808143907.png]] - [[Pasted image 20220808143928.png]] - [[Pasted image 20220808144122.png]]</p><h2 id="56016079-ba55-4eb3-8c02-5807de4b6e72" class="">Networking</h2><ul id="1919bb17-2b62-42a9-bd42-c7409bd56ced" class="bulleted-list"><li style="list-style-type:disc">ssh webServer</li></ul><ul id="e791a77b-942d-4668-bb9a-ecca0199e598" class="bulleted-list"><li style="list-style-type:disc">public and private key</li></ul><ul id="25c43f98-14b8-4ecb-9a5c-7b126e0409dc" class="bulleted-list"><li style="list-style-type:disc">scp /home/sample.txt  /home/bob = tranfer files from a server to another server<p id="84e3938f-f9cc-40f0-9a79-380a610045c6" class="">webServer :</p></li></ul><ul id="f71215d0-7e64-41e5-9d80-749ac7059a38" class="bulleted-list"><li style="list-style-type:disc">scp flages = -pr</li></ul><ul id="2942157e-7fe0-4153-87b2-a613d304f354" class="bulleted-list"><li style="list-style-type:disc">ip table</li></ul><ul id="aeb7ef3a-e9e3-4096-b437-b940db3f3e85" class="bulleted-list"><li style="list-style-type:disc">what is a port</li></ul><ul id="141d3cd1-7f26-4dcc-a064-46d6a54ff1ed" class="bulleted-list"><li style="list-style-type:disc">ping 198.168.21.1</li></ul><ul id="e78c3443-9032-4283-9ac3-d941455499c7" class="bulleted-list"><li style="list-style-type:disc">ssh = a secure connection + Executing commands on a remote computer</li></ul><ul id="03fa8896-50b5-468b-8e28-c08eac934d52" class="bulleted-list"><li style="list-style-type:disc">curl = tranfer data over vatious netework protocol + URL - = DNS but a golbal<p id="9186b3bf-d7f6-4046-a443-7614aef6c901" class="">/etc/hosts</p></li></ul><ul id="bc06c492-eece-43f8-991e-8275cec41011" class="bulleted-list"><li style="list-style-type:disc">first check in the local (/etc/host) then go check to then golbal<ul id="d809dddf-0dbc-4638-bb44-673ef77f42fc" class="bulleted-list"><li style="list-style-type:circle">you can canage it from cat<p id="032dd2e6-7fa1-404f-a021-97821383c83a" class="">/etc/nsswitch.config</p></li></ul><ul id="93cb5ca5-4051-465a-9986-42784afdb5a9" class="bulleted-list"><li style="list-style-type:circle">domain or url = ip</li></ul><ul id="578b583b-a75f-44a5-8787-717c4f63d67e" class="bulleted-list"><li style="list-style-type:circle">apps.google.com = go to dns root &gt; org dns &gt; googel dns &gt; apps dns</li></ul><ul id="9da4eebd-91c1-4e17-acb0-9a8ad28dbd32" class="bulleted-list"><li style="list-style-type:circle">www is the main page</li></ul></li></ul><ul id="70b089e4-e15a-4ea4-adf2-e0633e23e7d5" class="bulleted-list"><li style="list-style-type:disc">/etc/resolv.confg = for local host + DNS server</li></ul><ul id="a777db08-74b6-4c0c-8d8f-b8ce1273f0bb" class="bulleted-list"><li style="list-style-type:disc">nslookup ip or url=  = details about ip and DNS<p id="902ef4d6-7f16-4b8b-8188-2f037ec66f32" class="">dig</p></li></ul><ul id="a39e2577-2b7d-4aa6-a873-163d3f5c3433" class="bulleted-list"><li style="list-style-type:disc">ip route add 192.168.1.0/24  192.168.2.1<p id="ea423649-9dbb-4b5f-aa67-e9c7634c0db1" class="">via</p></li></ul><ul id="831e5442-6ba4-434d-8883-890ba5947f21" class="bulleted-list"><li style="list-style-type:disc">ip a</li></ul><ul id="4e63f48f-8954-464e-ae6f-2567b3683808" class="bulleted-list"><li style="list-style-type:disc">route</li></ul><ul id="f723784c-9c69-4e90-965e-dfa1f5de91a8" class="bulleted-list"><li style="list-style-type:disc">ip link = to see host interface</li></ul><ul id="f3060b5f-842c-472d-a9c6-a42a96a6c0a5" class="bulleted-list"><li style="list-style-type:disc">ip addr = to connect a interface to switch or ip</li></ul><ul id="4b0f3cbf-093c-473a-a4fa-a9f98c9acb8e" class="bulleted-list"><li style="list-style-type:disc">route = to show the routing table - = all ip connect to it<p id="0d6d72f3-9589-47b9-be1b-dd10b9827b5b" class="">ip route add defulte via 192.168.2.0</p></li></ul><ul id="ae7b640b-3c75-4c3d-95da-ec40a115dbf5" class="bulleted-list"><li style="list-style-type:disc">ip up =</li></ul><h3 id="e3911de7-68ea-4e34-b854-915869f7c339" class="">–&gt; Troubleshooting</h3><ul id="f2183350-6a23-44f3-9283-654df600976d" class="bulleted-list"><li style="list-style-type:disc">The problem maybe in a client or the server .</li></ul><ol type="1" id="42ca0cd5-c159-423b-a0a6-81b274da1d86" class="numbered-list" start="1"><li>ip link = check for interface + if ip is on()<p id="75570fd5-821e-400b-9d84-cdc322b1e1d8" class="">UP</p></li></ol><ol type="1" id="2485001d-6c24-4851-9a98-75d9b5ad5f31" class="numbered-list" start="2"><li>nslookup URL = check for if the URL connect to DNS and have an ip</li></ol><ol type="1" id="d805fe33-76d1-4f76-a9af-89652d81f451" class="numbered-list" start="3"><li>ping = check for a response (  not every serve let ping being on)<p id="aa25235b-ca6b-47ad-9007-d9bdddfccba6" class="">note:</p></li></ol><ol type="1" id="880b2015-86cb-4de8-aa9d-91ef197e8121" class="numbered-list" start="4"><li>traceroute = list of devices between the client and server + check if any device have a problem</li></ol><ol type="1" id="ac6006f5-a2e2-40d7-9e77-510b1de33ef1" class="numbered-list" start="5"><li>netstate = to check newrok connection + port ?!</li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CSS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c72649fe-ba22-4c06-85d7-1be151e2f56e" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/document_red.svg"/></div><h1 class="page-title">CSS</h1><p class="page-description"></p></header><div class="page-body"><ol type="1" id="bb687d70-aab2-4a90-b263-d35f8ef54972" class="numbered-list" start="1"><li>Selectors:<ul id="ec9e37ad-36ff-43d0-bae8-ba8fdf61e779" class="bulleted-list"><li style="list-style-type:disc">Element Selector: <code>element</code></li></ul><ul id="5d2e3f47-f305-4a8d-99ba-dd413c428cab" class="bulleted-list"><li style="list-style-type:disc">Class Selector: <code>.classname</code></li></ul><ul id="c8c3d9d3-2a05-4506-b4e7-707c55692a3e" class="bulleted-list"><li style="list-style-type:disc">ID Selector: <code>#elementID</code></li></ul><ul id="3dad35cf-74ef-46f5-9285-fc7b627ff395" class="bulleted-list"><li style="list-style-type:disc">Attribute Selector: <code>[attribute=&quot;value&quot;]</code></li></ul></li></ol><ol type="1" id="b3a78ba6-ca31-4f28-9e73-3f480b64e6cb" class="numbered-list" start="2"><li>Box Model:<ul id="a51ac44e-2ec4-44bd-ba7b-570ab80152b0" class="bulleted-list"><li style="list-style-type:disc">Width and Height: <code>width</code>, <code>height</code></li></ul><ul id="0e7fca05-fbba-4ae1-8cd9-095ab82569cf" class="bulleted-list"><li style="list-style-type:disc">Margin: <code>margin</code></li></ul><ul id="966b38df-7695-486c-9f06-b8729de399a5" class="bulleted-list"><li style="list-style-type:disc">Padding: <code>padding</code></li></ul><ul id="42395f4c-c856-4307-b3fe-3c589bdf7732" class="bulleted-list"><li style="list-style-type:disc">Border: <code>border</code></li></ul></li></ol><ol type="1" id="7a0ff72c-105c-4409-9b1a-e787d90f8e23" class="numbered-list" start="3"><li>Typography:<ul id="08709d37-d442-423d-a214-d7c3e9a0386c" class="bulleted-list"><li style="list-style-type:disc">Font Family: <code>font-family</code></li></ul><ul id="a7e1ee7b-9785-49c8-a4b9-6a4f1720d6c0" class="bulleted-list"><li style="list-style-type:disc">Font Size: <code>font-size</code></li></ul><ul id="a12acfdf-350e-44b5-ad77-d86a48e01fb1" class="bulleted-list"><li style="list-style-type:disc">Font Weight: <code>font-weight</code></li></ul><ul id="7b0a2225-6d50-4899-9312-64d4595d8115" class="bulleted-list"><li style="list-style-type:disc">Text Color: <code>color</code></li></ul><ul id="8818c1ee-4be6-4d99-9fa8-b2f1c895022f" class="bulleted-list"><li style="list-style-type:disc">Text Alignment: <code>text-align</code></li></ul></li></ol><ol type="1" id="f9d456e8-c701-4f16-9702-3ffa8c871803" class="numbered-list" start="4"><li>Layout and Positioning:<ul id="62d76c45-7238-40bb-9495-eb861ae09722" class="bulleted-list"><li style="list-style-type:disc"><code>static</code>: The default position.</li></ul><ul id="9aac20e8-70f3-45f7-aea1-fd19e4efc5ca" class="bulleted-list"><li style="list-style-type:disc"><code>relative</code>: Allows editing the position in flow with the parent position as (0,0).</li></ul><ul id="0487cae3-8039-4a3f-a40e-6ceb21e3a9fe" class="bulleted-list"><li style="list-style-type:disc"><code>absolute</code>: Takes the parent position as (0,0) and can be freely adjusted.</li></ul><ul id="97926533-aa37-486f-bbd0-34ad6ead4a1e" class="bulleted-list"><li style="list-style-type:disc"><code>fixed</code>: Becomes absolute but remains fixed even when scrolling.</li></ul><ul id="15edfadf-a697-4180-a386-1fd3f7e1a1bf" class="bulleted-list"><li style="list-style-type:disc"><code>sticky</code>: A relative position that becomes fixed when certain conditions are met.</li></ul></li></ol><ol type="1" id="fe1ce0a1-f8a2-49e7-9ecf-b9b30c658b98" class="numbered-list" start="5"><li>Colors and Backgrounds:<ul id="96fb8eea-9cb3-49b9-8704-773b1002065c" class="bulleted-list"><li style="list-style-type:disc">Background Color: <code>background-color</code></li></ul><ul id="5855e9d8-eaab-41b6-80d9-3e8861730972" class="bulleted-list"><li style="list-style-type:disc">Background Image: <code>background-image</code></li></ul><ul id="845e851e-5f8d-4974-af49-158309efa3bc" class="bulleted-list"><li style="list-style-type:disc">Opacity: <code>opacity</code></li></ul><ul id="4e784ed1-c3c8-4585-a449-2a0d508e680d" class="bulleted-list"><li style="list-style-type:disc"><code>colo = hsl(color, saturation, lightness)</code></li></ul></li></ol><ol type="1" id="cf015548-d2a9-4b5c-a501-d16ce88f864e" class="numbered-list" start="6"><li>Responsive Design:<ul id="e2ffaeba-ffd4-4096-90a0-6941f37d48d0" class="bulleted-list"><li style="list-style-type:disc">Media Queries: <code>@media</code></li></ul><ul id="421e104a-1aeb-45c7-ac25-a86db63d0f0b" class="bulleted-list"><li style="list-style-type:disc">Responsive Units: <code>em</code>, <code>rem</code>, <code>%</code></li></ul></li></ol><ol type="1" id="0724852e-4471-4286-8429-312a281e43ea" class="numbered-list" start="7"><li>Flexbox:<ul id="711235cd-1b98-4309-9c9d-88df05aafbfc" class="bulleted-list"><li style="list-style-type:disc">Container: <code>display: flex</code></li></ul><ul id="d4c2d44d-8f48-4266-a7dc-9ea2399cbfcf" class="bulleted-list"><li style="list-style-type:disc">Justify Content: <code>justify-content</code></li></ul><ul id="6b0e2de2-2204-415c-80e3-7a8abc9e3718" class="bulleted-list"><li style="list-style-type:disc">Align Items: <code>align-items</code></li></ul></li></ol><ol type="1" id="cb2829b5-fe49-41b8-865b-84f62cd7de88" class="numbered-list" start="8"><li>Grid:<ul id="419c4192-9d81-4b79-93a5-1fafeedab857" class="bulleted-list"><li style="list-style-type:disc">Container: <code>display: grid</code></li></ul><ul id="c02cb5b6-9f43-49a9-b4a8-7659eb676089" class="bulleted-list"><li style="list-style-type:disc">Grid Template Columns: <code>grid-template-columns</code></li></ul><ul id="15f6464f-2308-420f-8e40-5dbe34363dfe" class="bulleted-list"><li style="list-style-type:disc">Grid Template Rows: <code>grid-template-rows</code></li></ul><ul id="fa7f2713-2d87-4998-9e4b-81f14aae34c0" class="bulleted-list"><li style="list-style-type:disc">Grid Gap: <code>grid-gap</code></li></ul><ul id="00b94e44-4bee-4fd8-b00d-f821c7ba297d" class="bulleted-list"><li style="list-style-type:disc">Grid Column: <code>grid-column</code></li></ul><ul id="03a494b2-2539-4d49-8c8d-8d6e21669b01" class="bulleted-list"><li style="list-style-type:disc">Grid Row: <code>grid-row</code></li></ul><ul id="10883c6b-a88d-4777-875d-039bdca09415" class="bulleted-list"><li style="list-style-type:disc">Grid Area: <code>grid-area</code></li></ul><ul id="54c616bc-cef7-4288-8f86-42eb12b89a63" class="bulleted-list"><li style="list-style-type:disc"><code>display: grid</code>: Sets the container as a grid container.</li></ul><ul id="784da67d-96da-4922-85a7-351597ff7c12" class="bulleted-list"><li style="list-style-type:disc"><code>repeat(auto-fit, 1fr)</code>: Creates template areas with automatic fitting.</li></ul><ul id="76554d1f-f769-4270-bc0f-5f26e1259edb" class="bulleted-list"><li style="list-style-type:disc"><code>grid-area</code>: Assigns areas to grid items.</li></ul><ul id="ff59dd6a-d771-4f73-afd2-88fffcd82350" class="bulleted-list"><li style="list-style-type:disc"><code>justify-content</code>: Controls the alignment along the y-axis.</li></ul></li></ol><ol type="1" id="5bbca356-fecf-47c4-a758-f876ffa72eec" class="numbered-list" start="9"><li>Transitions and Animations:<ul id="7f90bcfa-d945-4e04-a097-b32b5e71574f" class="bulleted-list"><li style="list-style-type:disc">Transition: <code>transition-property</code>, <code>transition-duration</code>, <code>transition-timing-function</code>, <code>transition-delay</code></li></ul><ul id="18fc016d-6a67-488b-b402-60bb40056b11" class="bulleted-list"><li style="list-style-type:disc">Animation: <code>@keyframes</code>, <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code>, <code>animation-delay</code>, <code>animation-iteration-count</code></li></ul></li></ol><ol type="1" id="10e114c8-8c7b-4d45-94a9-ad12b70da0f4" class="numbered-list" start="10"><li>Pseudo-classes and Pseudo-elements:<ul id="8d27c9d8-ffb8-4db9-a61e-78a9cad0988d" class="bulleted-list"><li style="list-style-type:disc">Pseudo-classes: <code>:hover</code>, <code>:focus</code>, <code>:nth-child()</code></li></ul><ul id="2995b258-b09e-483d-a04a-50044a5ae08c" class="bulleted-list"><li style="list-style-type:disc">Pseudo-elements: <code>::before</code>, <code>::after</code></li></ul></li></ol><ol type="1" id="ebfc44da-cf0f-49aa-8600-711dd465a328" class="numbered-list" start="11"><li>CSS Units:<ul id="9f9f7d43-e620-4ceb-bcbe-3fc8b7a63eb1" class="bulleted-list"><li style="list-style-type:disc">Pixels (px)</li></ul><ul id="6095ffe9-9b96-480e-a9f7-37a3f57bc93a" class="bulleted-list"><li style="list-style-type:disc">Percentages (%)</li></ul><ul id="f4faaaae-767b-4cd3-ac04-a6ea96d0ce33" class="bulleted-list"><li style="list-style-type:disc">Em (em)</li></ul><ul id="274ec3f6-9765-456a-bef1-a27ce1469262" class="bulleted-list"><li style="list-style-type:disc">Rem (rem)</li></ul></li></ol><ol type="1" id="6f3e9ea3-1717-449f-987a-74d53ae98fca" class="numbered-list" start="12"><li>CSS Variables:<ul id="4b58e085-392a-471c-905b-19ca0a2eae87" class="bulleted-list"><li style="list-style-type:disc">Declare: <code>-variable-name</code></li></ul><ul id="b7b2c0a5-2a7e-4cf0-ad9f-062ce0a54910" class="bulleted-list"><li style="list-style-type:disc">Use: <code>var(--variable-name)</code></li></ul></li></ol><ol type="1" id="c3dcc1ae-4440-45cd-9f2e-044ad6fc10f0" class="numbered-list" start="13"><li>Other <ul id="b7f768b9-5336-4972-9ba8-8c8a82133d75" class="bulleted-list"><li style="list-style-type:disc">Transform: <code>transform</code></li></ul><ul id="3d2024b6-de1a-4c5e-abee-975176ef6167" class="bulleted-list"><li style="list-style-type:disc">Filter: <code>filter</code></li></ul><ul id="4b3bc7a0-0913-4832-a89f-e118fd359458" class="bulleted-list"><li style="list-style-type:disc">Background Blend Mode: <code>background-blend-mode</code></li></ul></li></ol><ol type="1" id="553383d8-511b-4676-88c6-a54141e0ccd3" class="numbered-list" start="14"><li>CSS Frameworks:<ul id="f39a8285-d267-4e61-beef-8fa649d2b7ea" class="bulleted-list"><li style="list-style-type:disc">Bootstrap</li></ul><ul id="46bfed6e-0ff1-4f06-b37f-ed1ae40f8ae0" class="bulleted-list"><li style="list-style-type:disc">Bulma</li></ul><ul id="5c925b0c-1c16-43ab-a073-01fd3a491f46" class="bulleted-list"><li style="list-style-type:disc">Foundation</li></ul></li></ol><ol type="1" id="03e222c2-eec0-46d0-8ec8-1c46206fa84f" class="numbered-list" start="15"><li>CSS Grid Frameworks:<ul id="9da3e5ad-87c0-4421-b162-bbc4dcd9a7ef" class="bulleted-list"><li style="list-style-type:disc">Susy</li></ul><ul id="06dac35a-8b7d-4af6-bc4c-04d92c01fe25" class="bulleted-list"><li style="list-style-type:disc">CSS Grid Layout</li></ul><ul id="07f9b5e8-4e4a-45fe-9992-855bb4804b4c" class="bulleted-list"><li style="list-style-type:disc">Neat</li></ul></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
